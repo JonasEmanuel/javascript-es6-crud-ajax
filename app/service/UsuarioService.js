@@ -27,7 +27,6 @@ class UsuarioService {
     create(usuario) {
         return new Promise((resolve, reject) => {
             this.xhr.open("POST", this.url + "/usuario/create");
-            this.xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
             this.xhr.setRequestHeader('Content-Type', 'application/json');
             this.xhr.onreadystatechange = () => {
                 if (this.xhr.readyState == 4) {
