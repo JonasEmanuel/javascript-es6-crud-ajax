@@ -23,7 +23,6 @@ class UsuarioController {
         if (!ValidatorHelper.validEmail(usuario.email)) {
             new Error("Email inválido!");
         } else {
-
             this.usuarioService.create(usuario)
                 .then(x => this.list())
                 .catch(x => console.log(x));
@@ -32,12 +31,6 @@ class UsuarioController {
     }
 
     list() {
-        this.usuarioService.findAll()
-            .then(data => {
-                this.usuarioView.update(data);
-            });
+        this.usuarioService.findAll().then(data => this.usuarioView.update(data));
     }
-
-
-
 }
